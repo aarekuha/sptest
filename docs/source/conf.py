@@ -18,7 +18,7 @@ extensions = [
     'sphinx.ext.autodoc',
 ]
 
-templates_path = ['_templates']
+templates_path = ['templates']
 exclude_patterns = []
 
 language = 'ru'
@@ -27,4 +27,4 @@ language = 'ru'
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
 html_theme = 'alabaster'
-html_static_path = ['_static']
+html_static_path = ['static']
