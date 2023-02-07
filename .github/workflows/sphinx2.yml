@@ -29,6 +29,8 @@ jobs:
         sudo rm -rf *
         sudo mv /tmp/docs .
         git add .
+        git config --global user.email "aarekuha@gmail.com"
+        git config --global user.name "github-actions[bot]"
         git commit -a -m "Add changes"
 
     - name: Push changes
