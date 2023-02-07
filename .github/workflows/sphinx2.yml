@@ -21,23 +21,20 @@ jobs:
       with:
         docs-folder: "docs/"
 
-    - name: Push pages
-      run: make gh-pages
+    - name: Commit files
+      run: |
+        sudo mkdir -p /tmp/docs
+        sudo chown -R $USER:$USER /tmp/docs
+        mv docs/build/html/* /tmp/docs
+        rm -rf *
+        mv /tmp/docs .
+        git add .
+        git commit -a -m "Add changes"
 
-    # - name: Commit files
-    #   run: |
-    #     mkdir -p /tmp/docs
-    #     sudo chmod o+rw /tmp/docs
-    #     mv docs/build/html/* /tmp/docs
-    #     rm -rf *
-    #     mv /tmp/docs .
-    #     git add .
-    #     git commit -a -m "Add changes"
-    #
-    # - name: Push changes
-    #   uses: ad-m/github-push-action@master
-    #   with:
-    #     github_token: ${{ secrets.GH_SECRET }}
-    #     branch: gh-pages
-    #     force: true
-    #     directory: 'docs/build/html'
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GH_SECRET }}
+        branch: gh-pages
+        force: true
+        directory: 'docs/build/html'
