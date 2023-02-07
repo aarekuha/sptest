@@ -51,3 +51,4 @@ jobs:
         github_token: ${{ secrets.GH_SECRET }}
         branch: gh-pages
         force: true
+        directory: ./docs/build/html
