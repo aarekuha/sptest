@@ -32,7 +32,7 @@ jobs:
       run: |
         cd docs
         make html
-        ls -la build
+        ls -la build/html
         cd ..
 
     - name: Commit files
