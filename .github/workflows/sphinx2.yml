@@ -23,7 +23,7 @@ jobs:
 
     - name: Commit files
       run: |
-        mkdir -p /tmp
+        mkdir -p /tmp/docs
         mv docs/build/html /tmp/docs
         rm -rf *
         mv /tmp/docs .
