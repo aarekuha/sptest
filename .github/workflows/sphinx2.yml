@@ -25,9 +25,9 @@ jobs:
       run: |
         sudo mkdir -p /tmp/docs
         sudo chown -R $USER:$USER /tmp/docs
-        mv docs/build/html/* /tmp/docs
+        sudo mv docs/build/html/* /tmp/docs
         rm -rf *
-        mv /tmp/docs .
+        sudo mv /tmp/docs .
         git add .
         git commit -a -m "Add changes"
 
