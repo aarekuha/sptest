@@ -24,6 +24,7 @@ jobs:
     - name: Commit files
       run: |
         mkdir -p /tmp/docs
+        sudo chmod o+rw /tmp/docs
         mv docs/build/html/* /tmp/docs
         rm -rf *
         mv /tmp/docs .
