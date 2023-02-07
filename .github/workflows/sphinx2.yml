@@ -27,12 +27,6 @@ jobs:
       run: |
         make -C docs html
 
-    - name: Commit files
-      run: |
-        git config --local user.email "aarekuha@gmail.com"
-        git config --local user.name "github-actions[bot]"
-        git commit -a -m "Add changes"
-
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
