@@ -13,11 +13,9 @@ jobs:
 
     - uses: actions/checkout@master
       with:
+        ref: ${{ github.head_ref }}
         persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal access token.
-
-    - uses: actions/setup-python@v4
-      with:
-        python-version: 3.9
+        fetch-depth: 0
 
     - uses: ammaraskar/sphinx-action@master
       with:
@@ -29,4 +27,4 @@ jobs:
         github_token: ${{ secrets.GH_SECRET }}
         branch: gh-pages
         force: true
-        directory: ./docs/build/html
+        directory: 'docs/build/html'
